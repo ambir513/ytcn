@@ -223,7 +223,7 @@ export default function DemoPage() {
             <div className="rounded-2xl p-2 bg-muted/30 border border-border">
               <div className="rounded-xl overflow-hidden ring-1 ring-border shadow-xl">
                 <YtcnPlayer
-                  videoId={DEMO_VIDEOS[playlistIndex].id}
+                  videoId={DEMO_VIDEOS[playlistIndex]?.id ?? ""}
                   onEnd={() => {
                     if (playlistIndex < DEMO_VIDEOS.length - 1) {
                       setPlaylistIndex((i) => i + 1);
