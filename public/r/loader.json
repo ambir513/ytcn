@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loader",
+  "title": "YtcnLoader",
+  "description": "Loading state overlay with spinner shown during player initialization or quality change.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/loader/ytcn-loader.tsx",
+      "content": "\"use client\";\n\nimport { IconLoader2 } from \"@tabler/icons-react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface YtcnLoaderProps {\n  /** Whether the loading overlay should be visible */\n  isLoading: boolean;\n  className?: string;\n}\n\n/**\n * YtcnLoader — Loading state overlay shown during player initialization\n * or quality-change recreation.\n *\n * Renders above the iframe but below the controls, with a backdrop blur\n * and spinner animation.\n */\nexport function YtcnLoader({ isLoading, className }: YtcnLoaderProps) {\n  if (!isLoading) return null;\n\n  return (\n    <div\n      className={cn(\n        \"absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/90 backdrop-blur-sm\",\n        className\n      )}\n    >\n      <IconLoader2 className=\"size-8 animate-spin text-primary mb-2\" />\n      <p className=\"text-sm text-muted-foreground\">Loading video...</p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "overlay",
+  "title": "YtcnOverlay",
+  "description": "Transparent click-to-play overlay between iframe and controls.",
+  "files": [
+    {
+      "path": "registry/new-york/overlay/ytcn-overlay.tsx",
+      "content": "\"use client\";\n\ninterface YtcnOverlayProps {\n  /** Called when the overlay is clicked (typically toggles play/pause) */\n  onClick: () => void;\n}\n\n/**\n * YtcnOverlay — Transparent click-intercept div above the iframe.\n *\n * Sits between the YouTube iframe (z-10) and the custom controls (z-30).\n * Serves two purposes:\n *   1. Captures click events for play/pause without them reaching the\n *      iframe (which has pointerEvents: none anyway, but defense in depth).\n *   2. Provides the cursor: pointer visual feedback over the video area.\n */\nexport function YtcnOverlay({ onClick }: YtcnOverlayProps) {\n  return (\n    <div\n      className=\"absolute inset-0 z-20 cursor-pointer\"\n      onClick={onClick}\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

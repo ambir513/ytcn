@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fullscreen",
+  "title": "YtcnFullscreen",
+  "description": "Fullscreen toggle button with maximize/minimize icon.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/fullscreen/ytcn-fullscreen.tsx",
+      "content": "\"use client\";\n\nimport { IconMaximize, IconMinimize } from \"@tabler/icons-react\";\n\ninterface YtcnFullscreenProps {\n  /** Whether the player is currently in fullscreen mode */\n  isFullscreen: boolean;\n  /** Toggle fullscreen on/off */\n  onToggle: () => void;\n}\n\n/**\n * YtcnFullscreen — Fullscreen toggle button.\n *\n * Switches icon between maximize and minimize based on current state.\n */\nexport function YtcnFullscreen({ isFullscreen, onToggle }: YtcnFullscreenProps) {\n  return (\n    <button\n      onClick={(e) => {\n        e.stopPropagation();\n        onToggle();\n      }}\n      className=\"flex items-center justify-center rounded-sm p-1.5 text-white transition-colors hover:bg-white/10\"\n      aria-label={isFullscreen ? \"Exit fullscreen\" : \"Fullscreen\"}\n    >\n      {isFullscreen ? (\n        <IconMinimize className=\"size-5\" />\n      ) : (\n        <IconMaximize className=\"size-5\" />\n      )}\n    </button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

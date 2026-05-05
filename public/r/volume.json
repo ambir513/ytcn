@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "volume",
+  "title": "YtcnVolume",
+  "description": "Volume slider with mute toggle and context-aware icon.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/volume/ytcn-volume.tsx",
+      "content": "\"use client\";\n\nimport {\n  IconVolume,\n  IconVolumeOff,\n  IconVolume2,\n} from \"@tabler/icons-react\";\nimport { Slider } from \"@/components/ui/slider\";\n\ninterface YtcnVolumeProps {\n  /** Current volume level (0–100) */\n  volume: number;\n  /** Whether audio is currently muted */\n  isMuted: boolean;\n  /** Called with new volume value (0–100) */\n  onVolumeChange: (vol: number) => void;\n  /** Toggle mute on/off */\n  onToggleMute: () => void;\n}\n\n/**\n * YtcnVolume — Volume slider with mute toggle.\n *\n * The slider is hidden by default (width: 0) and expands on hover via\n * a CSS transition on the parent group. This matches YouTube's native\n * volume control UX without any JS-driven show/hide state.\n */\nexport function YtcnVolume({\n  volume,\n  isMuted,\n  onVolumeChange,\n  onToggleMute,\n}: YtcnVolumeProps) {\n  const VolumeIcon =\n    isMuted || volume === 0\n      ? IconVolumeOff\n      : volume < 50\n        ? IconVolume2\n        : IconVolume;\n\n  return (\n    <div className=\"group/volume flex items-center gap-1\">\n      <button\n        onClick={(e) => {\n          e.stopPropagation();\n          onToggleMute();\n        }}\n        className=\"flex items-center justify-center rounded-sm p-1 text-white transition-colors hover:bg-white/10\"\n        aria-label={isMuted ? \"Unmute\" : \"Mute\"}\n      >\n        <VolumeIcon className=\"size-5\" />\n      </button>\n      <div className=\"w-0 overflow-hidden transition-[width] duration-200 group-hover/volume:w-20\">\n        <Slider\n          value={[isMuted ? 0 : volume]}\n          max={100}\n          step={1}\n          onValueChange={([val]) => onVolumeChange(val)}\n          className=\"w-20 cursor-pointer\"\n          aria-label=\"Volume\"\n          onClick={(e) => e.stopPropagation()}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

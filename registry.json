@@ -1,0 +1,91 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ytcn",
+  "homepage": "https://ytcn.dev",
+  "items": [
+    {
+      "name": "player",
+      "type": "registry:block",
+      "title": "YouTube Player",
+      "description": "Full YouTube IFrame player with custom controls, thumbnail-first loading, autoplay, and zero branding.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "slider",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "registry/ytcn/player/ytcn-player.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-controls.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-progress.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-volume.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-speed.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-fullscreen.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-overlay.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/ytcn-loader.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ytcn/player/use-ytcn-player.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/ytcn/player/use-thumbnail.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/ytcn/player/use-idle-controls.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/ytcn/player/use-keyboard-shortcuts.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/ytcn/player/use-fullscreen.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/ytcn/player/use-timeline.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/ytcn/player/loader.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/ytcn/player/format.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/ytcn/player/types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}
