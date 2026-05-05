@@ -4,286 +4,85 @@
   "homepage": "https://ytcn.dev",
   "items": [
     {
-      "name": "player",
+      "name": "ytcn",
       "type": "registry:block",
-      "title": "YtcnPlayer",
-      "description": "Full composed YouTube player with zero branding, custom controls, quality/speed selectors, fullscreen, and keyboard shortcuts. Drop-in replacement for native YouTube embeds.",
-      "dependencies": ["@tabler/icons-react"],
+      "title": "YouTube Player",
+      "description": "Full YouTube IFrame player with custom controls, thumbnail-first loading, autoplay, and zero branding.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
       "registryDependencies": [
+        "button",
         "slider",
-        "dropdown-menu",
         "popover"
       ],
       "files": [
         {
-          "path": "registry/new-york/player/ytcn-player.tsx",
+          "path": "registry/ytcn/player/ytcn-player.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-controls.tsx",
+          "path": "registry/ytcn/player/ytcn-controls.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-progress.tsx",
+          "path": "registry/ytcn/player/ytcn-progress.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-volume.tsx",
+          "path": "registry/ytcn/player/ytcn-volume.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-quality.tsx",
+          "path": "registry/ytcn/player/ytcn-speed.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-speed.tsx",
+          "path": "registry/ytcn/player/ytcn-fullscreen.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-fullscreen.tsx",
+          "path": "registry/ytcn/player/ytcn-overlay.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-overlay.tsx",
+          "path": "registry/ytcn/player/ytcn-loader.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/player/ytcn-loader.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/player/types.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/player/use-ytcn-player.ts",
+          "path": "registry/ytcn/player/use-ytcn-player.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/player/use-fullscreen.ts",
+          "path": "registry/ytcn/player/use-thumbnail.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/player/use-timeline.ts",
+          "path": "registry/ytcn/player/use-idle-controls.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/player/use-keyboard-shortcuts.ts",
+          "path": "registry/ytcn/player/use-keyboard-shortcuts.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/player/use-youtube-api.ts",
+          "path": "registry/ytcn/player/use-fullscreen.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/player/loader.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/player/quality.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/player/format.ts",
-          "type": "registry:lib"
-        }
-      ]
-    },
-    {
-      "name": "controls",
-      "type": "registry:component",
-      "title": "YtcnControls",
-      "description": "Full controls bar with progress, play/pause, volume, quality/speed settings, and fullscreen toggle.",
-      "dependencies": ["@tabler/icons-react"],
-      "registryDependencies": [
-        "slider",
-        "dropdown-menu",
-        "popover"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york/controls/ytcn-controls.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/controls/ytcn-progress.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/controls/ytcn-volume.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/controls/ytcn-quality.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/controls/ytcn-fullscreen.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/controls/types.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/controls/quality.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/controls/format.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/controls/use-timeline.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "progress",
-      "type": "registry:component",
-      "title": "YtcnProgress",
-      "description": "Timeline scrub bar with hover tooltip, buffer indicator, and drag-to-seek.",
-      "dependencies": ["@tabler/icons-react"],
-      "files": [
-        {
-          "path": "registry/new-york/progress/ytcn-progress.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/progress/use-timeline.ts",
+          "path": "registry/ytcn/player/use-timeline.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/progress/format.ts",
-          "type": "registry:lib"
-        }
-      ]
-    },
-    {
-      "name": "volume",
-      "type": "registry:component",
-      "title": "YtcnVolume",
-      "description": "Volume slider with mute toggle and context-aware icon.",
-      "dependencies": ["@tabler/icons-react"],
-      "registryDependencies": ["slider"],
-      "files": [
-        {
-          "path": "registry/new-york/volume/ytcn-volume.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "quality",
-      "type": "registry:component",
-      "title": "YtcnQuality",
-      "description": "Quality selector dropdown with optional speed picker, portaled for fullscreen visibility.",
-      "dependencies": ["@tabler/icons-react"],
-      "registryDependencies": ["dropdown-menu"],
-      "files": [
-        {
-          "path": "registry/new-york/quality/ytcn-quality.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/quality/types.ts",
+          "path": "registry/ytcn/player/loader.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/quality/quality.ts",
-          "type": "registry:lib"
-        }
-      ]
-    },
-    {
-      "name": "speed",
-      "type": "registry:component",
-      "title": "YtcnSpeed",
-      "description": "Playback speed picker using Radix Popover, portaled for fullscreen visibility.",
-      "dependencies": ["@tabler/icons-react"],
-      "registryDependencies": ["popover"],
-      "files": [
-        {
-          "path": "registry/new-york/speed/ytcn-speed.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/speed/types.ts",
-          "type": "registry:lib"
-        }
-      ]
-    },
-    {
-      "name": "fullscreen",
-      "type": "registry:component",
-      "title": "YtcnFullscreen",
-      "description": "Fullscreen toggle button with maximize/minimize icon.",
-      "dependencies": ["@tabler/icons-react"],
-      "files": [
-        {
-          "path": "registry/new-york/fullscreen/ytcn-fullscreen.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "overlay",
-      "type": "registry:component",
-      "title": "YtcnOverlay",
-      "description": "Transparent click-to-play overlay between iframe and controls.",
-      "files": [
-        {
-          "path": "registry/new-york/overlay/ytcn-overlay.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "loader",
-      "type": "registry:component",
-      "title": "YtcnLoader",
-      "description": "Loading state overlay with spinner shown during player initialization or quality change.",
-      "dependencies": ["@tabler/icons-react"],
-      "files": [
-        {
-          "path": "registry/new-york/loader/ytcn-loader.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "use-ytcn-player",
-      "type": "registry:hook",
-      "title": "useYtcnPlayer",
-      "description": "Core headless player hook — manages YouTube IFrame API lifecycle, quality enforcement, polling, and exposes reactive state + imperative controls.",
-      "files": [
-        {
-          "path": "registry/new-york/use-ytcn-player/use-ytcn-player.ts",
-          "type": "registry:hook"
-        },
-        {
-          "path": "registry/new-york/use-ytcn-player/use-fullscreen.ts",
-          "type": "registry:hook"
-        },
-        {
-          "path": "registry/new-york/use-ytcn-player/use-youtube-api.ts",
-          "type": "registry:hook"
-        },
-        {
-          "path": "registry/new-york/use-ytcn-player/types.ts",
+          "path": "registry/ytcn/player/format.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/use-ytcn-player/loader.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/use-ytcn-player/quality.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/use-ytcn-player/format.ts",
+          "path": "registry/ytcn/player/types.ts",
           "type": "registry:lib"
         }
       ]

@@ -20,7 +20,7 @@ export default function PlayerPage() {
         Installation
       </h2>
       <CodeBlock
-        code="npx shadcn@latest add https://ytcn.dev/r/player.json"
+        code="npx shadcn@latest add https://ytcn.dev/r/ytcn"
         language="bash"
       />
 

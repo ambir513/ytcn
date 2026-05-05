@@ -232,9 +232,9 @@ export default function HomePage() {
             <div className="flex items-center gap-2 rounded-lg bg-muted border border-border px-4 py-2.5 font-mono text-sm">
               <IconTerminal2 className="size-4 text-muted-foreground shrink-0" />
               <code className="flex-1 text-left text-muted-foreground truncate">
-                npx shadcn@latest add https://ytcn.dev/r/player.json
+                npx shadcn@latest add https://ytcn.dev/r/ytcn
               </code>
-              <CopyButton text="npx shadcn@latest add https://ytcn.dev/r/player.json" />
+              <CopyButton text="npx shadcn@latest add https://ytcn.dev/r/ytcn" />
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@
   "homepage": "https://ytcn.dev",
   "items": [
     {
-      "name": "player",
+      "name": "ytcn",
       "type": "registry:block",
       "title": "YouTube Player",
       "description": "Full YouTube IFrame player with custom controls, thumbnail-first loading, autoplay, and zero branding.",
