@@ -9,6 +9,7 @@
 
 // ── Components ──
 export { YtcnPlayer } from "./ytcn-player";
+export { YouTubePlayer } from "./YouTubePlayer";
 export { YtcnControls } from "./ytcn-controls";
 export { YtcnProgress } from "./ytcn-progress";
 export { YtcnVolume } from "./ytcn-volume";
@@ -19,6 +20,7 @@ export { YtcnLoader } from "./ytcn-loader";
 
 // ── Component Props ──
 export type { YtcnPlayerProps } from "./ytcn-player";
+export type { YouTubePlayerProps } from "./YouTubePlayer";
 export type { YtcnControlsProps } from "./ytcn-controls";
 export type { YtcnProgressProps } from "./ytcn-progress";
 export type { YtcnSpeedProps } from "./ytcn-speed";

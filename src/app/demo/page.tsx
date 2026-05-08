@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { YouTubePlayer } from "@/components/ytcn/YouTubePlayer";
 import { YtcnPlayer } from "@/components/ytcn/ytcn-player";
 import { useYtcnPlayer } from "@/hooks/ytcn/use-ytcn-player";
 import { useThumbnail } from "@/hooks/ytcn/use-thumbnail";
@@ -11,7 +12,6 @@ import {
   IconArrowLeft,
   IconVolume,
   IconVolumeOff,
-  IconSettings,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 
@@ -148,7 +148,7 @@ export default function DemoPage() {
               The Difference
             </h2>
             <p className="text-muted-foreground text-lg">
-              Compare the standard YouTube embed (with YouTube branding, "More Videos" overlays, and watermarks) against the clean, professional ytcn player.
+              Compare the standard YouTube embed with YouTube branding, native chrome, and overlays against the updated ytcn custom player with shadcn/ui controls, quality selection, and mobile-safe touch controls.
             </p>
           </div>
 
@@ -173,16 +173,21 @@ export default function DemoPage() {
               </div>
             </div>
 
-            {/* ytcn player */}
+            {/* ytcn custom player */}
             <div className="space-y-4">
               <div className="flex items-center justify-between px-2">
                 <span className="font-semibold text-primary flex items-center gap-2">
-                  <IconPlayerPlayFilled className="size-4" /> ytcn Player
+                  <IconPlayerPlayFilled className="size-4" /> ytcn Custom Player
                 </span>
-                <span className="text-xs text-primary-foreground bg-primary px-2 py-1 rounded font-mono">{"<YtcnPlayer />"}</span>
+                <span className="text-xs text-primary-foreground bg-primary px-2 py-1 rounded font-mono">{"<YouTubePlayer />"}</span>
               </div>
-              <div className="rounded-xl overflow-hidden ring-1 ring-primary/20 shadow-xl shadow-primary/10 bg-black aspect-video">
-                <YtcnPlayer videoId="dQw4w9WgXcQ" />
+              <div className="rounded-xl overflow-hidden ring-1 ring-primary/20 shadow-xl shadow-primary/10 bg-black">
+                <YouTubePlayer videoId="dQw4w9WgXcQ" />
+              </div>
+              <div className="grid grid-cols-3 gap-2 px-1 text-xs text-muted-foreground">
+                <span className="rounded-md bg-muted px-2 py-1 text-center">Custom controls</span>
+                <span className="rounded-md bg-muted px-2 py-1 text-center">Quality selector</span>
+                <span className="rounded-md bg-muted px-2 py-1 text-center">Mobile ready</span>
               </div>
             </div>
           </div>
